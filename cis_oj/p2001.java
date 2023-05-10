@@ -30,7 +30,7 @@ public class p2001 {
 
         while(myQueue.size() != 0) {
             start = myQueue.poll();
-            System.out.print(" ");
+            System.out.print(start + 1 + " ");
 
             Iterator<Integer> i = adj[start].listIterator();
             while (i.hasNext()) {
@@ -63,10 +63,10 @@ public class p2001 {
         // 간선의 수만큼 반복
         for(int i = 0; i < inputValue[1]; i++) {
             st = new StringTokenizer(br.readLine());
-            myGraph.addEdge(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+            myGraph.addEdge(Integer.parseInt(st.nextToken()) - 1, Integer.parseInt(st.nextToken()) - 1);
         }
 
-        myGraph.BFS(inputValue[2]);
+        myGraph.BFS(inputValue[2] - 1);
 
     }
 }
